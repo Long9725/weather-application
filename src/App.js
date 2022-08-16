@@ -54,27 +54,42 @@ function App() {
 
   return (
     <main>
-      <div className='App'>
+      <div className='form'>
         <form onSubmit={handleSumbit}>
           <input
           value={search}
           type='text'
           name='city'
-          placeholder='City name'
+          placeholder='Location'
           onChange={handleChange}
           />
           <button htmlFor='city'>Search</button>
         </form>
         <section>
-          <h1>{allData.city}</h1>
-          <h2>{allData.country}</h2>  
-          <h3>Temperature</h3>
-          <p>{allData.temp}°C</p>
-          <h3>Minimum temperature</h3>
-          <p>{allData.tempMin}°C</p>
-          <h3>Humidity</h3>
-          <p>{allData.humidity}%</p>
-          <img src={`http://openweathermap.org/img/wn/${allData.weatherIcon}@4x.png`}/>
+          <div className='header-div'>
+            <div>
+              <div className='data'>
+          <img src={`http://openweathermap.org/img/wn/${allData.weatherIcon}@2x.png`}/>
+          <h1 className='title'>{allData.city}</h1>
+          <h2 className='location'>{allData.country}</h2> 
+
+          <div className='weather-description'>
+          <div>
+            <h3>Humidity</h3>
+            <p>{allData.humidity}%</p>
+          </div>
+          <div>
+            <h3>Temperature</h3>
+            <p>{allData.temp}°C</p>
+          </div>
+          <div>
+            <h3>Minimum temperature</h3>
+            <p>{allData.tempMin}°C</p>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
         </section>
       </div>
     </main>
